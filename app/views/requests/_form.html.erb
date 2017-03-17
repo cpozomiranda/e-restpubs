@@ -1,17 +1,30 @@
+
 <%= form_for(request) do |f| %>
   <% if request.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+  <div id="error_explanation">
+    <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
 
-      <ul>
+    <ul>
       <% request.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <li><%= message %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
+
+
+  <div class="row">
+    <div class="field">
+      <%= f.label :table_id %>
+      <div style="color:black"> 
+        <%= f.collection_select :table_id, Table.order(:number), :id, :number, include_blank: true, :prompt => "Selecciona una mesa" %> 
+      </div>  
+    </div>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+

@@ -23,5 +23,13 @@ Product.create(name:'Paella Marinera', price:'3500', photo:"", category_id:Categ
 Product.create(name:'Lasagna', price:'3500', photo:"", category_id:Category.find_by(name:'Foods').id)
 
 Table.create(number: 1, status: true)
+Table.create(number: 2, status: true)
+Table.create(number: 3, status: true)
+Table.create(number: 4, status: true)
+Table.create(number: 5, status: true)
+Table.create(number: 6, status: true)
+Table.create(number: 7, status: true)
+Table.create(number: 8, status: true)
+Table.create(number: 9, status: true)
+Table.create(number: 10, status: true)
 
-Request.create(user_id:, table_id:, comment:""  )

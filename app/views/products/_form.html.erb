@@ -10,28 +10,30 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :name %>
+    <%= f.label :Nombre %>
     <div><%= f.text_field :name %></div>
   </div>
 
   <div class="field">
-    <%= f.label :price %>
+    <%= f.label :Precio %>
     <div><%= f.number_field :price %></div>
   </div>
 
   <div class="field">
-    <%= f.label :photo %>
+    <%= f.label :Foto %>
     <div><%= f.text_field :photo %></div>
   </div>
 
+  <br>
+
   <div class="field">
-    <%= f.label :category_id %>
-    <div style="color:black"><%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true, :prompt => "Select One Category" %></div>
+    <%= f.label :Categoria %>
+    <div style="color:black"><%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true, :prompt => "Seleccione una categoria" %></div>
   </div>
   <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Crear producto', class: 'btn btn-primary' %>
   </div>
 <% end %>

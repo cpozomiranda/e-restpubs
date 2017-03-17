@@ -1,4 +1,86 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Comidas</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.name %></td>
+          <td><%= link_to 'Agregar producto'%></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tragos</th>
+          <th colspan="1"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @drinks.each do |drink| %>
+        <tr>
+          <td><%= drink.name %></td>
+          <td><%= link_to 'Agregar producto'%></td>
+        </tr>
+        <% end %>
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<%= form_for(@request) do |f| %>
+  <% if @request.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+
+    <ul>
+      <% @request.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+
+
+  <div class="field">
+   <%= f.label :comment %>
+   <div> 
+     <%= f.text_field :comment %>  
+   </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
 <%= link_to 'Edit', edit_request_path(@request) %> |
 <%= link_to 'Back', requests_path %>

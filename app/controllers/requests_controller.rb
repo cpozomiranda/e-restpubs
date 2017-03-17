@@ -4,17 +4,29 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = Request.all
+    #@requests = current_user.requests
+    @requests = []
+    current_user.requests.each do |request|
+      @requests << request if request.table.status == true
+    end
   end
 
   # GET /requests/1
   # GET /requests/1.json
   def show
+     @drinks = Category.find_by(name:'Drinks').products
+     @foods = Category.find_by(name:'Foods').products
+      
   end
+
+
 
   # GET /requests/new
   def new
     @request = Request.new
+
+  
+
   end
 
   # GET /requests/1/edit
@@ -25,6 +37,8 @@ class RequestsController < ApplicationController
   # POST /requests.json
   def create
     @request = Request.new(request_params)
+    @request.user = current_user
+  
 
     respond_to do |format|
       if @request.save
@@ -69,6 +83,6 @@ class RequestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
-      params.fetch(:request, {})
+      params.require(:request).permit(:comment, :table_id)
     end
 end
