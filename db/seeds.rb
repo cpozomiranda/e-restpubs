@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Request.destroy_all
+Table.destroy_all
 Category.destroy_all
 
 Category.create(name:'Drinks')
@@ -19,3 +21,7 @@ Product.create(name:'Chuletón de cerdo', price:'3500', photo:"", category_id:Ca
 Product.create(name:'Fettuccine alfredo', price:'3500', photo:"", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Paella Marinera', price:'3500', photo:"", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Lasagna', price:'3500', photo:"", category_id:Category.find_by(name:'Foods').id)
+
+Table.create(number: 1, status: true)
+
+Request.create(user_id:, table_id:, comment:""  )
