@@ -33,3 +33,4 @@ Table.create(number: 8, status: true)
 Table.create(number: 9, status: true)
 Table.create(number: 10, status: true)
 
+AdminUser.create!(email: 'admin@admin.com', password: '123456', password_confirmation: '123456')
