@@ -9,6 +9,7 @@ class RequestsController < ApplicationController
     current_user.requests.each do |request|
       @requests << request if request.table.status == true
     end
+    @perros = Product.all
   end
 
   # GET /requests/1
@@ -17,7 +18,6 @@ class RequestsController < ApplicationController
      @drinks = Category.find_by(name:'Drinks').products
      @foods = Category.find_by(name:'Foods').products
      @products = Product.all
-      
   end
 
 

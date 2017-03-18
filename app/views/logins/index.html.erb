@@ -1,9 +1,9 @@
 <div class="container">
 
 	
-	<% if user_signed_in? || admin_user_signed_in? %>
-
-	<li><a href="<%= new_request_path %>"> ingresar nuevo pedido </a></li>
+	<% if user_signed_in? %>
+  	
+	<li><a href="<%= request_path %>"> Ver pedidos</a></li>
 	<% else %>
 	<li><a href="<%= new_user_session_path %>"> Login Empleado </a></li>
 

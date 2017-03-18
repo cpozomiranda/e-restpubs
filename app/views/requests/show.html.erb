@@ -15,8 +15,8 @@
       <tr>
         <td><%= image_tag(product.photo, size: "70x50") %></td>
         <td><%= product.name %></td>
-        <td class="actions" data-th="">                
-          <button class="btn btn-success btn-sm"><i class="fa fa-plus"></i></button>                
+        <td>
+         <%= link_to 'Call Action', request_product_orders_path(@request.id,product.id), method: :post %>
         </td>
       </tr>
     <% end %>
@@ -56,8 +56,8 @@
   <% end %>
 </div>
 
-
-
+<%= @request.user_id %>
+<%= @request.table_id %>
 
 
 <%= link_to 'Edit', edit_request_path(@request) %> |

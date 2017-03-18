@@ -13,12 +13,12 @@
 
   <tbody>
     <% @requests.each do |request| %>
-      <tr>
-        <td><%= request.table.number %></td>
-        <td><%= request.comment %></td>
-        <td><%= link_to 'Actualizar Pedido', request %></td>
-        <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= request.table.number %></td>
+      <td><%= request.comment %></td>
+      <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
+      <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
