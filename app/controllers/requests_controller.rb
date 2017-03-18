@@ -16,8 +16,6 @@ class RequestsController < ApplicationController
   def show
      @drinks = Category.find_by(name:'Drinks').products
      @foods = Category.find_by(name:'Foods').products
-     @product = Product.all
-     
       
   end
 
