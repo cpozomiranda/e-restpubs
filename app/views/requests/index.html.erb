@@ -17,8 +17,7 @@
         <td><%= request.table.number %></td>
         <td><%= request.comment %></td>
         <td><%= link_to 'Actualizar Pedido', request %></td>
-        <td><%= link_to 'Cambiar Mesa', edit_request_path(request) %></td>
-        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

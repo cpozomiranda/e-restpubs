@@ -25,9 +25,7 @@ class RequestsController < ApplicationController
   # GET /requests/new
   def new
     @request = Request.new
-
-  
-
+    @tables = Table.where(status: false)
   end
 
   # GET /requests/1/edit
@@ -37,12 +35,14 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.json
   def create
+    @table = Table.find(request_params[:table_id])
     @request = Request.new(request_params)
     @request.user = current_user
-  
+    @table.status = true
 
     respond_to do |format|
       if @request.save
+        @table.save
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
       else

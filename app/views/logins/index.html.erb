@@ -1,0 +1,23 @@
+<div class="container">
+
+	
+	<% if user_signed_in? || admin_user_signed_in? %>
+
+	<li><a href="<%= new_request_path %>"> ingresar nuevo pedido </a></li>
+	<% else %>
+	<li><a href="<%= new_user_session_path %>"> Login Empleado </a></li>
+
+	<% end %>	
+
+	<% if admin_user_signed_in? %>
+
+	<li><a href="<%= admin_user_session_path %>"> Ingresar al Dashboard </a></li>
+	<% else %>
+	<li><a href="<%= new_admin_user_session_path %>"> Login Administrador </a></li>
+
+	<% end %>	
+
+
+
+
+</div>

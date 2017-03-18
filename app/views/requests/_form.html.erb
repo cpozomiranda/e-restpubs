@@ -17,7 +17,7 @@
     <div class="field">
       <%= f.label :Mesa %>
       <div style="color:black"> 
-        <%= f.collection_select :table_id, Table.order(:number), :id, :number, include_blank: true, :prompt => "Selecciona una mesa" %> 
+        <%= f.collection_select :table_id, @tables, :id, :number, include_blank: true, :prompt => "Selecciona una mesa" %> 
       </div>  
     </div>
   </div>
