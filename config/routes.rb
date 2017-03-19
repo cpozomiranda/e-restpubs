@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'logins/index'
 
+  get 'requests/kitchen'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
@@ -11,11 +13,14 @@ Rails.application.routes.draw do
   resources :requests do
     resources :products do
       resources :orders, only: [:create]
+
     end
   end
 
   resources :orders do
     get 'destroy'
+
+   
   end
 
   resources :tables

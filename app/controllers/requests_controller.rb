@@ -7,7 +7,7 @@ class RequestsController < ApplicationController
     #@requests = current_user.requests
     @requests = []
     current_user.requests.each do |request|
-      @requests << request if request.table.status == true
+      @requests << request if request.table.status
     end
 
   end
@@ -19,6 +19,14 @@ class RequestsController < ApplicationController
    @foods = Category.find_by(name:'Foods').products
    @products = Product.all
    @orders = @request.orders
+ end
+
+ def kitchen
+  @all = Request.all
+  @requests = []
+  @all.each do |request|
+    @requests << request if request.table.status
+  end
  end
 
   # GET /requests/new

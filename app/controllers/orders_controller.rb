@@ -13,4 +13,10 @@ class OrdersController < ApplicationController
     @order.delete
     redirect_to @request
   end
+
+  def show
+    @order = Order.all
+    
+  end
+
 end

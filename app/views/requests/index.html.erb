@@ -7,6 +7,7 @@
     <tr>
       <th>Mesa N°</th>
       <th>Comentario</th>
+      <th>Ordenes</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
     <tr>
       <td><%= request.table.number %></td>
       <td><%= request.comment %></td>
+      <td><%= request.orders.count %></td>
       <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
       <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

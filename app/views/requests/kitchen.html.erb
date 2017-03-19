@@ -1,0 +1,11 @@
+<% @requests.each do |request| %>
+	<ul>
+		<%= request.id %>
+		<% request.orders.each do |order| %>
+		<li>
+			<%= order.product.name %>
+		</li>
+	<% end %>
+	</ul>
+<% end %>
+
