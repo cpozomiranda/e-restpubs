@@ -11,16 +11,14 @@ Rails.application.routes.draw do
   resources :products
   resources :categories
   resources :requests do
+    get 'close_table'
     resources :products do
       resources :orders, only: [:create]
-
     end
   end
 
   resources :orders do
     get 'destroy'
-
-   
   end
 
   resources :tables

@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20170318022735) do
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
     t.string   "name"
-    t.integer  "role"
+    t.integer  "role",                   default: 1
     t.string   "address"
     t.string   "photo"
     t.string   "phone"

@@ -9,6 +9,7 @@ Request.destroy_all
 Table.destroy_all
 Category.destroy_all
 AdminUser.destroy_all
+User.destroy_all
 
 Category.create(name:'Drinks')
 Category.create(name:'Foods')

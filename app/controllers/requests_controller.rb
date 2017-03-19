@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /requests
   # GET /requests.json
@@ -26,8 +27,21 @@ class RequestsController < ApplicationController
   @requests = []
   @all.each do |request|
     @requests << request if request.table.status
+  
   end
  end
+
+  def close_table
+    @request = Request.find(params[:request_id])
+    @table = @request.table
+    @table.status = false
+    @table.save
+    redirect_to requests_path,
+    notice: 'El pedido se completó satifactoriamente.'
+
+   
+  end
+
 
   # GET /requests/new
   def new
