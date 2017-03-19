@@ -1,0 +1,8 @@
+<tr>
+	<td><%= image_tag(product.photo, size: "60x40") %></td>
+	<td><%= product.name %></td>
+	<td>
+	<div class="">
+	<%= link_to 'Agregar al Pedido', request_product_orders_path(@request.id,product.id), method: :post %></div>
+	</td>
+</tr>

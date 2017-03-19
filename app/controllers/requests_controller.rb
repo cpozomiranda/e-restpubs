@@ -9,18 +9,18 @@ class RequestsController < ApplicationController
     current_user.requests.each do |request|
       @requests << request if request.table.status == true
     end
-    @perros = Product.all
+
   end
 
   # GET /requests/1
   # GET /requests/1.json
   def show
-     @drinks = Category.find_by(name:'Drinks').products
-     @foods = Category.find_by(name:'Foods').products
-     @products = Product.all
+   @drinks = Category.find_by(name:'Drinks').products
+   @foods = Category.find_by(name:'Foods').products
+   @products = Product.all
+  
+
   end
-
-
 
   # GET /requests/new
   def new
@@ -57,7 +57,7 @@ class RequestsController < ApplicationController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
+        format.html { redirect_to requests_path, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
       else
         format.html { render :edit }
@@ -69,7 +69,10 @@ class RequestsController < ApplicationController
   # DELETE /requests/1
   # DELETE /requests/1.json
   def destroy
-    @request.destroy
+    @table = Request.find(params[:id]).table
+    @table.status = false
+    @table.save if @request.destroy
+
     respond_to do |format|
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
@@ -85,5 +88,6 @@ class RequestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_params
       params.require(:request).permit(:comment, :table_id)
+      
     end
 end

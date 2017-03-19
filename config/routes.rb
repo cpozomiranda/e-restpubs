@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :categories
   resources :requests do
     resources :products do
-      resources :orders, only: [:create]
+      resources :orders, only: [:create, :destroy]
+      
     end
   end
 

@@ -1,3 +1,3 @@
 class Table < ApplicationRecord
-	has_many :request
+	has_many :requests
 end
