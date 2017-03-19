@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   resources :categories
   resources :requests do
     resources :products do
-      resources :orders, only: [:create, :destroy]
-      
+      resources :orders, only: [:create]
     end
+  end
+
+  resources :orders do
+    get 'destroy'
   end
 
   resources :tables

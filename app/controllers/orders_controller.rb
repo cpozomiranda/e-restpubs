@@ -9,7 +9,8 @@ class OrdersController < ApplicationController
 
   def destroy
   	@order = Order.find(params[:order_id])
-  	@order.delete
-  	
+    @request = @order.request
+    @order.delete
+    redirect_to @request
   end
 end

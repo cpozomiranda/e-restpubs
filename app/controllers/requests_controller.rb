@@ -18,9 +18,8 @@ class RequestsController < ApplicationController
    @drinks = Category.find_by(name:'Drinks').products
    @foods = Category.find_by(name:'Foods').products
    @products = Product.all
-  
-
-  end
+   @orders = @request.orders
+ end
 
   # GET /requests/new
   def new
@@ -90,4 +89,4 @@ class RequestsController < ApplicationController
       params.require(:request).permit(:comment, :table_id)
       
     end
-end
+  end
