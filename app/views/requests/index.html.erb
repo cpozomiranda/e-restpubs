@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 
 <% if current_user.admin? || current_user.waiter? %>
 <div class="container fondo">
@@ -22,7 +22,7 @@
         <td><%= request.orders.count %></td>
         <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
         <td><%= link_to 'Terminar Pedido', request_close_table_path(request) %></td>
-        <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Estas seguro ?' } %></td>
+        <td><%= link_to 'Cancelar Pedido', request, method: :delete, data: { confirm: 'Estas seguro ?' } %></td>
       </tr>
       <% end %>
     </tbody>
@@ -33,4 +33,4 @@
 <% end %>
 
 <div class="hotfix"></div>
-
+</div>

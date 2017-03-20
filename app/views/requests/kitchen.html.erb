@@ -1,5 +1,5 @@
-
-<% @requests.each do |request| %>
+<div class="container">
+	<% @requests.each do |request| %>
 	<div class="col-md-3-centered  pedidos">
 		<ul class="list-group">
 			<li class="list-group-item"><strong>MESA</strong> <span class="badge"> <%= request.table.number %> </span></li>
@@ -16,16 +16,12 @@
 		</ul>
 	</div>
 
-<% end %>
+	<% end %>
+
+</div>
 
 
 
-
-
-<style>
-
-	
-</style>
 
 <script>setTimeout(function(){
    window.location.reload(1);
