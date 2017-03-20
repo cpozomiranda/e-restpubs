@@ -19,6 +19,11 @@ class RequestsController < ApplicationController
    @drinks = Category.find_by(name:'Drinks').products
    @foods = Category.find_by(name:'Foods').products
    @products = Product.all
+   if params[:search]
+    @products = Product.search(params[:search]).order("created_at DESC")
+  else
+    @products = Product.all.order("created_at DESC")
+  end
    @orders = @request.orders
    respond_to do |f|
     f.html

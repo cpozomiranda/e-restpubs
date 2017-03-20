@@ -9,6 +9,13 @@
             <tr> 
              <h3>Seleccionar Productos</h3> 
              <br>
+             <div class="btn btn-default" style="float: right;">
+<%= form_tag(request_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar Producto" %>
+    <%= submit_tag "Buscar", :name => nil %>
+<% end %>
+</div>
+
            </tr>
          </thead>
 
@@ -32,6 +39,8 @@
         <thead>
           <tr> 
            <h3>Ordenes</h3> 
+           <br>
+           <br>
            <br>
          </tr>
        </thead>
