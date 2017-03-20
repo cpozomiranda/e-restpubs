@@ -26,7 +26,7 @@ Product.create(name:'Tequila Margarita', price:'3500', photo:"http://www.lavozde
 Product.create(name:'Chuletón de cerdo', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Fettuccine alfredo', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Paella Marinera', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
-Product.create(name:'Lasagna', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
+Product.create(name:'Sopa', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Bistec a lo Pobre', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
 Product.create(name:'Lasagna', price:'3500', photo:"http://www.lavozdelnorte.cl/wp-content/uploads/2015/02/Piscola-Fondo-Rojo-660x400.png", category_id:Category.find_by(name:'Foods').id)
 
