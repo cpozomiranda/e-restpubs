@@ -17,9 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :orders do
-    get 'destroy'
-  end
+  resources :orders, only: [:destroy]
 
   resources :tables
   resources :users

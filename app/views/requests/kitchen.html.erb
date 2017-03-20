@@ -1,29 +1,40 @@
-<div class="col-md-3 left">
+ <meta http-equiv="refresh" content="15" />
 <% @requests.each do |request| %>
-	<ul>
-		<li>MESA</li>
-		<li><%= request.table.id %></li>
-		<li></li>
-		<li>COMENTARIO</li>
-		<li><%= request.comment %></li>
-		<li></li>
-		<li>PRODUCTOS</li>
-		<% request.orders.each do |order| %>
-		<li><%= order.product.name %></li>
-		
-	<% end %>
-	</ul>
+	<div class="col-md-3-centered  pedidos">
+		<ul class="list-group">
+			<li class="list-group-item"><strong>MESA</strong> <span class="badge"> <%= request.table.number %> </span></li>
+			<li><br></li>
+			<li>COMENTARIO</li>
+			<li>---------------------</li>
+			<li><%= request.comment %></li>
+			<li>---------------------</li>
+			<li >PRODUCTOS</li>
+			<% request.orders.each do |order| %>
+			<li><%= order.product.name %></li>
+			
+			<% end %>
+		</ul>
+	</div>
+
 <% end %>
-</div>
+
 
 
 
 
 <style>
-	ul > li {
-
-	}
+.pedidos{
 	
+	border: solid 1px grey;
+	margin-right: ;
+	margin-top: 5px; 
+
+}
+	
+ ul > li{
+	list-style: none;
+	padding-left: 50px;
+}
 	
 </style>
 

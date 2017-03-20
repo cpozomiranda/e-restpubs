@@ -21,7 +21,7 @@
           <td><%= product.name %></td>
           <td>
             <div class="">
-             <%= link_to 'Agregar al Pedido', request_product_orders_path(@request.id,product.id), method: :post %></div>
+             <%= link_to 'Agregar al Pedido', request_product_orders_path(@request.id,product.id), method: :post, remote: true%></div>
            </td>
          </tr>
          <% end %>
@@ -38,7 +38,7 @@
            <br>
          </tr>
        </thead>
-       <tbody>
+       <tbody id="orders">
         <%= render @orders %>
        </tbody>
      </table>

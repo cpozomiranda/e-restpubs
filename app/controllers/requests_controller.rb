@@ -20,6 +20,11 @@ class RequestsController < ApplicationController
    @foods = Category.find_by(name:'Foods').products
    @products = Product.all
    @orders = @request.orders
+   respond_to do |f|
+    f.html
+    f.json
+    f.js
+    end
  end
 
  def kitchen
@@ -66,9 +71,11 @@ class RequestsController < ApplicationController
         @table.save
         format.html { redirect_to @request, notice: 'Request was successfully created.' }
         format.json { render :show, status: :created, location: @request }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -80,9 +87,11 @@ class RequestsController < ApplicationController
       if @request.update(request_params)
         format.html { redirect_to requests_path, notice: 'Request was successfully updated.' }
         format.json { render :show, status: :ok, location: @request }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @request.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -97,6 +106,7 @@ class RequestsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to requests_url, notice: 'Request was successfully destroyed.' }
       format.json { head :no_content }
+      format.js
     end
   end
 
