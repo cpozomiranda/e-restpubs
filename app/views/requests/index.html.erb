@@ -1,41 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<!-- CAMARERO -->
+
 <% if current_user.admin? || current_user.waiter? %>
 <div class="container fondo">
-<h1>Administrar Pedidos</h1>
-
-<table class="table table-striped table-hover ">
-  <thead>
-    <tr>
-      <th>Mesa N°</th>
-      <th>Comentario</th>
-      <th>Ordenes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @requests.each do |request| %>
-    <tr>
-      <td><%= request.table.number %></td>
-      <td><%= request.comment %></td>
-      <td><%= request.orders.count %></td>
-      <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
-      <td><%= link_to 'Terminar Pedido', request_close_table_path(request) %></td>
-      <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Estas seguro ?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-
-<%= link_to 'Nuevo Pedido', new_request_path %>
-
-
+  <h1>Administrar Pedidos</h1>
+  <br>
+  <table class="table table-striped table-hover ">
+    <thead>
+      <tr>
+        <th>Mesa N°</th>
+        <th>Comentario</th>
+        <th>Ordenes</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.table.number %></td>
+        <td><%= request.comment %></td>
+        <td><%= request.orders.count %></td>
+        <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
+        <td><%= link_to 'Terminar Pedido', request_close_table_path(request) %></td>
+        <td><%= link_to 'Eliminar Pedido', request, method: :delete, data: { confirm: 'Estas seguro ?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+ <button class="btn btn-primary"> <%= link_to 'Nuevo Pedido', new_request_path %></button>
 </div>
 <% end %>
 
+<div class="hotfix"></div>
 

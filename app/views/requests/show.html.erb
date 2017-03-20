@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-
 <div class="row ">
   <div class="col-md-12">
     <div class="col-md-6">
@@ -30,7 +28,6 @@
    </div>
 
    <div class="col-md-6">
-
       <table class="table table-striped table-hover " style="border-left: solid 0.5px grey; ">
         <thead>
           <tr> 
@@ -40,25 +37,17 @@
        </thead>
        <tbody id="orders">
         <%= render @orders %>
-       </tbody>
-     </table>
-   </div>
-
-
-
-
- </div>
-
+      </tbody>
+    </table>
+    </div>
+  </div>
 </div>
 
-
 <div class="col-md-6">
-
   <%= form_for(@request) do |f| %>
   <% if @request.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
-
     <ul>
       <% @request.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -66,27 +55,23 @@
     </ul>
   </div>
   <% end %>
+  <div class="field" >
+   <h5>Comentario</h5>
+   <div> 
+     <%= f.text_area  :comment, size: "35x5" %>  
+   </div>
+ </div>
 
-<br>
-<br>
-
-    <div class="field" >
-     <h5>Comentario</h5>
-     <div> 
-       <%= f.text_area  :comment, size: "35x5" %>  
-     </div>
-    </div>
-
-    <div>
-      <%= f.submit nil, :class => 'btn btn-primary' %>
-    </div>
-  <% end %>
+ <div>
+  <%= f.submit nil, :class => 'btn btn-primary' %>
 </div>
+<% end %>
+</div>
+<div class="col-md-12 hotfix"></div>
 
 
 
 
-<%= link_to 'Back', requests_path %>
 
 
      
