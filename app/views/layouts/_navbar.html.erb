@@ -14,6 +14,8 @@
       <ul class="nav navbar-nav">
         <li><a href="<%= requests_path %>">Pedidos</a></li>
         <li><a href="<%= requests_kitchen_path %>">Cocina</a></li>
+        <li><a href="<%= products_path %>">Productos</a></li>
+        <li><a href="<%= categories_path %>">Categorias</a></li>
 
 
       </ul>
@@ -23,7 +25,7 @@
       <ul class="nav navbar-nav navbar-right">
 
        <% if user_signed_in? %>
-       
+
        <li>
          <a href="<%= destroy_user_session_path %>" data-method='delete'>Salir</a>
        </li>
