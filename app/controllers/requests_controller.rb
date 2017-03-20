@@ -9,6 +9,12 @@ class RequestsController < ApplicationController
     @requests = []
     current_user.requests.each do |request|
       @requests << request if request.table.status
+
+
+
+# @categories = Product.group(:category_id).count
+
+
     end
 
   end
