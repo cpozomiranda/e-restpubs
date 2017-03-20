@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'logins/index'
 
   get 'requests/kitchen'
+  get 'requests/checkout'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

@@ -1,0 +1,34 @@
+<div class="container">
+	<% @requests.each do |request| %>
+	<div class="col-md-10 pedidos">
+		
+				
+				<table class="table table-striped table-hover">
+					<thead>
+					<tr>
+						
+					</tr>
+						<tr>
+							<th class="h4">Items</th>
+							<th class="h4">Precio</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% request.orders.each do |order| %>
+						<tr>
+							<td><%= order.product.name %></td>
+							<td><%= order.product.price %></td>
+						</tr>
+
+					</tbody>
+
+					<% end %>
+							<td>TOTAL</td>
+							<td> </td>	
+				</table>
+
+				
+			
+		</div>
+		<% end %>
+	</div>

@@ -32,6 +32,12 @@ class RequestsController < ApplicationController
     end
  end
 
+def checkout
+  @requests = Request.all
+  
+end
+
+
  def kitchen
   @all = Request.all
   @requests = []
