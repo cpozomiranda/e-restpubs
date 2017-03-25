@@ -1,10 +1,12 @@
 
-<tr id="order_<%= order.id %>">
+<tr  id="order_<%= order.id %>">
 	<td><%= image_tag(order.product.photo, size: "60x40") %></td>
 	<td><%= order.product.name %></td>
 	<td>
-	<div>
-		<%= link_to 'Eliminar', order,method: :delete, remote: true %>
-	</div>
+		<div>
+			<%= link_to ''.html_safe, order,method: :delete, remote: true, :class => "btn btn-danger glyphicon glyphicon-minus	"%>
+		</div>
+
+		
 	</td>
 </tr>

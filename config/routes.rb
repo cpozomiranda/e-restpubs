@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'orders/create'
 
   get 'logins/index'
-
+  get 'reports/show'
   get 'requests/kitchen'
   get 'requests/checkout'
 
@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   resources :requests do
     get 'close_table'
     resources :products do
+
       resources :orders, only: [:create]
+
     end
   end
 
@@ -22,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :tables
   resources :users
+
 
   root 'requests#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
