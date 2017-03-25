@@ -20,15 +20,15 @@
         <td><%= request.table.number %></td>
         <td><%= request.comment %></td>
         <td><%= request.orders.count %></td>
-        <td><%= link_to 'Actualizar Pedido', request_path(request.id) %></td>
-        <td><%= link_to 'Terminar Pedido', request_close_table_path(request) %></td>
-        <td><%= link_to 'Cancelar Pedido', request, method: :delete, data: { confirm: 'Estas seguro ?' } %></td>
+        <td><%= link_to "".html_safe, request_path(request.id) ,:id => "button_id", :class => "btn btn-primary glyphicon glyphicon-refresh" %>
+        <%= link_to "".html_safe, request_close_table_path(request),:id => "button_id", :class => "btn btn-success glyphicon glyphicon-ok" %>
+        <%= link_to "".html_safe, request, method: :delete, data: { confirm: 'Estas seguro ?' } ,:id => "button_id", :class => "btn btn-danger glyphicon glyphicon-trash" %></td>
       </tr>
       <% end %>
     </tbody>
   </table>
   <br>
- <button class="btn btn-primary"> <%= link_to 'Nuevo Pedido', new_request_path %></button>
+ 
 </div>
 <% end %>
 
