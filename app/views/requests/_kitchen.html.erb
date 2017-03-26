@@ -1,0 +1,24 @@
+<div id="asd" class="container col-md-10">
+	<div class="col-md-10">
+		<% requests.each do |request| %>
+			<div class="col-md-3-centered  pedidos">
+				<ul class="list-group">
+					<li class="list-group-item"><strong>MESA</strong> <span class="badge"> <%= request.table.number %> </span></li>
+					<li><br></li>
+					<li>COMENTARIO</li>
+					<li>---------------------</li>
+					<li><%= request.comment %></li>
+					<li>---------------------</li>
+					<li >PRODUCTOS</li>
+					<% request.orders.each do |order| %>
+						<li><%= order.product.name %></li>
+					<% end %>
+				</ul>
+			</div>
+	<% end %>
+	</div>
+</div>
+
+<script>
+
+</script>

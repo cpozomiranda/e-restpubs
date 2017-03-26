@@ -12,8 +12,6 @@ class RequestsController < ApplicationController
 
 
 
-# @categories = Product.group(:category_id).count
-
 
     end
 
@@ -36,22 +34,31 @@ class RequestsController < ApplicationController
     f.json
     f.js
     end
- end
+  end
 
-def checkout
-  @requests = Request.all
-  
-end
-
-
- def kitchen
-  @all = Request.all
-  @requests = []
-  @all.each do |request|
-    @requests << request if request.table.status
+  def checkout
+    @requests = Request.all
   
   end
- end
+
+  def kitchen_show
+    @all = Request.all
+    @requests = []
+    @all.each do |request|
+      @requests << request if request.table.status
+    end
+  end
+
+   def refresh_kitchen
+    @all = Request.all
+    @requests = []
+    @all.each do |request|
+      @requests << request if request.table.status
+    end
+    respond_to do |format|
+    format.js
+  end
+  end
 
   def close_table
     @request = Request.find(params[:request_id])

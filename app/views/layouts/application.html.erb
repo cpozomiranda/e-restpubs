@@ -66,11 +66,9 @@
           </li>
           
           <li class="nav-header">
-            <div class="link"><i class="fa fa-cloud"></i>Sites<i class="fa fa-chevron-down"></i></div>
+            <div class="link"><i class="glyphicon glyphicon-cutlery"></i>Cocina<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
-              <li><a href="#">Search Sites</a></li>
-              <li><a href="#">New Site</a></li>
-              <li><a href="#">Jobs</a></li>
+              <li><a href="<%= requests_kitchen_show_path %>">Pedidos Activos</a></li>
             </ul>
           </li>  
           
@@ -85,7 +83,7 @@
           <li class="nav-header">
             <div class="link"><i class="fa fa-lg fa-file-image-o"></i>Reports<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
-              <li><a href="<%= report_path %>">Reportes</a></li> 
+              <li><a href="<%= reports_index_path %>">Reportes</a></li> 
               <li><a href="#">Redirects</a></li> 
               <li><a href="#">Pingbacks</a></li>          
               <li><a href="#">Tags</a></li>
@@ -113,6 +111,9 @@
   	
   </body>
 </html>
+
+
+
 
 
 <style>

@@ -18,9 +18,6 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def report
-    @products = Product.all
-  end
 
   # GET /products/new
   def new
