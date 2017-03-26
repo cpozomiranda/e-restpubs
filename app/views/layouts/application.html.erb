@@ -6,7 +6,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     
 
 <!-- Optional theme -->
@@ -71,22 +73,10 @@
               <li><a href="<%= requests_kitchen_show_path %>">Pedidos Activos</a></li>
             </ul>
           </li>  
-          
-           <li class="nav-header">
-            <div class="link"><i class="fa fa-lg fa-map-marker"></i>Zones<i class="fa fa-chevron-down"></i></div>
-            <ul class="submenu">
-              <li><a href="#">Search Zones</a></li>
-              <li><a href="#">New Zone</a></li>
-            </ul>
-          </li>
-          
           <li class="nav-header">
             <div class="link"><i class="fa fa-lg fa-file-image-o"></i>Reports<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
               <li><a href="<%= reports_index_path %>">Reportes</a></li> 
-              <li><a href="#">Redirects</a></li> 
-              <li><a href="#">Pingbacks</a></li>          
-              <li><a href="#">Tags</a></li>
             </ul>
           </li>
           
@@ -102,7 +92,7 @@
         <span class='burger_inside' id='bgrThree'></span>
       </a>      
       </div>
-    <section class="content-inner col-md-8">
+    <section class="content-inner">
       <%= yield %>
     </section>
   </div>  
@@ -195,8 +185,8 @@ h1{
   float: left;
   display: block;
   left: 0;
-  height: 91vh;
-}
+  height: auto;
+ }
 .wrap .content {
   position: absolute;
   right: 0;
