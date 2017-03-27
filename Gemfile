@@ -13,6 +13,7 @@ gem 'cancancan'
 gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'chartkick'
+gem 'chart-js-rails'
 gem 'activeadmin', github: 'activeadmin'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'

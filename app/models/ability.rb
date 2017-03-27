@@ -8,7 +8,10 @@ class Ability
        if user.admin?
          can :manage, :all
         elsif user.waiter?
-         can :manage, :all
+
+         can :read, :all
+         can :create, Request
+
         elsif user.chef?
          can :manage, :all
        end

@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require jsapi
 //= require chartkick
+//= require Chart
 //= require_tree .
