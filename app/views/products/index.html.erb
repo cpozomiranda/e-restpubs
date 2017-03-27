@@ -1,4 +1,4 @@
-
+<% if current_user.admin? %>
 <div class="col-md-10">
 <h1>Productos</h1>
 
@@ -33,16 +33,15 @@
         <td><%= product.name %></td>
         <td><%= product.price %></td>
         <td><%= product.category.name %></td>
-        <td><%= link_to 'ver', product %></td>
-        <td><%= link_to 'Editar', edit_product_path(product) %></td>
-        <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', edit_product_path(product),:id => "button_id", :class => "btn btn-primary glyphicon glyphicon-refresh" %></td>
+        <td><%= link_to '', product, method: :delete, data: { confirm: 'Are you sure?' },:id => "button_id", :class => "btn btn-danger glyphicon glyphicon-trash"  %></td>
       </tr>
     <% end %>
   </tbody>
 
 </table>
 </div>
-
+<% end %>
 
 
 

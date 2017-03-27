@@ -3,7 +3,6 @@ class Product < ApplicationRecord
   has_many :orders
   has_many :request, through: :orders
 
-
 def self.search(search)
   where("name LIKE ?", "%#{search}%") 
 end

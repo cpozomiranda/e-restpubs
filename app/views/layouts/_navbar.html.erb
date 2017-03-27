@@ -3,9 +3,7 @@
           <a class="navbar-brand" href="#">e-pubs</a>
           <ul class="nav navbar-nav">   
 
-              <form id="qform" class="navbar-form pull-left" role="search">
-                 <input type="text" class="form-control" placeholder="Search" />                        
-               </form>
+             
                
               <li class="dropdown movable">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="caret"></span><h4 class="glyphicon glyphicon-user"></h4></a>
@@ -41,7 +39,7 @@
             </ul>
           </li>
           <%# end %>
-          <%# if current_user.admin? || current_user.waiter? %> 
+          <%# if current_user.admin? || current_user.waiter?  %> 
           <li class="nav-header">
             <div class="link"><i class="glyphicon glyphicon-list-alt"></i>Pedidos<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">
@@ -50,7 +48,7 @@
             </ul>
           </li>
           <%# end %>
-          <%# if current_user.admin? || current_user.chef? %>
+          <%# if current_user.admin? || current_user.chef?  %>
           <li class="nav-header">
             <div class="link"><i class="glyphicon glyphicon-cutlery"></i>Cocina<i class="fa fa-chevron-down"></i></div>
             <ul class="submenu">

@@ -1,6 +1,8 @@
+<% if current_user.admin? || current_user.waiter?  %> 
 <div class="col-md-10">
 <h1>Nuevo Pedido</h1>
 <br>
 <%= render 'form', request: @request %>
 
 </div>
+<% end %>

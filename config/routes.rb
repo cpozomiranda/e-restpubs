@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'reports/index'
   get 'orders/create'
-  get 'logins/index'
   get 'reports/show'
   get 'requests/kitchen_show'
   #get 'requests/refresh_kitchen'

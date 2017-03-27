@@ -1,7 +1,7 @@
+<% if current_user.admin? %> 
 
-
-<div class="col-md-10 text-center">
-	<h1>Productos más vendidos</h1>
-	<%= pie_chart @products_by_order %>
-</div>
-</div>
+	<div class="col-md-10 text-center">
+		<h1>Productos más vendidos</h1>
+		<%= pie_chart @products_by_order %>
+	</div>
+<% end %>
