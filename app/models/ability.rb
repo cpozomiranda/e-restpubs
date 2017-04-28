@@ -13,8 +13,7 @@ class Ability
 
         elsif user.chef?
          can :manage, :all
-        else
-         can :read, :all
+      
        end
     #
     # The first argument to `can` is the action you are giving the user

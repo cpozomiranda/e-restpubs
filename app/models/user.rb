@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
          has_many :requests
 
-enum role: [:chef, :waiter, :admin]
+enum role: [:chef, :waiter, :admin, :guest]
 private
 def set_role
 	self.role||=1

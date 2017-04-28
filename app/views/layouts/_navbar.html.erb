@@ -28,7 +28,7 @@
 </nav>
 <aside id="side-menu" class="aside" role="navigation">            
   <ul class="nav nav-list accordion"> 
-    <%# if current_user.admin? %>
+    <% if can? :manage, Product %>
     <li class="nav-header">
       <div class="link">
         <i class="glyphicon glyphicon-glass"></i>Productos<i class="fa fa-chevron-down"></i>
@@ -38,8 +38,8 @@
         <li><a href="<%= products_path %>">Productos</a></li>  
       </ul>
     </li>
-    <%# end %>
-    <%# if current_user.admin? || current_user.waiter?  %> 
+    <% end %>
+    <% if can? :create, Request %>
     <li class="nav-header">
       <div class="link"><i class="glyphicon glyphicon-list-alt"></i>Pedidos<i class="fa fa-chevron-down"></i></div>
       <ul class="submenu">
@@ -47,23 +47,23 @@
         <li><a href="<%= requests_path %>">Pedidos</a></li>
       </ul>
     </li>
-    <%# end %>
-    <%# if current_user.admin? || current_user.chef?  %>
+    <% end %>
+    <% if can? :read, Request %>
     <li class="nav-header">
       <div class="link"><i class="glyphicon glyphicon-cutlery"></i>Cocina<i class="fa fa-chevron-down"></i></div>
       <ul class="submenu">
         <li><a href="<%= requests_kitchen_show_path %>">Pedidos Activos</a></li>
       </ul>
     </li>
-    <%# end %>
-    <%# if current_user.admin? %> 
+    <% end %>
+   <% if can? :manage, :all %>
     <li class="nav-header">
       <div class="link"><i class="fa fa-lg fa-file-image-o"></i>Reportes<i class="fa fa-chevron-down"></i></div>
       <ul class="submenu">
         <li><a href="<%= reports_index_path %>">Reportes</a></li> 
       </ul>
     </li>
-    <%# end %>
+    <% end %>
   </ul>
 </aside>
 

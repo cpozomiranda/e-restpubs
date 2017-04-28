@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'orders/create'
   get 'reports/show'
   get 'requests/kitchen_show'
-  #get 'requests/refresh_kitchen'
   get 'requests/kitchen'
   get 'requests/checkout'
 

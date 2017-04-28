@@ -1,6 +1,6 @@
 
 
-<% if current_user.admin? || current_user.waiter?  %> 
+<% if can? :read, Request %> 
 
 <div class="col-md-10">
   <h1>Administrar Pedidos</h1>

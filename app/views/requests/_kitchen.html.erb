@@ -1,4 +1,4 @@
-<% if current_user.admin? || current_user.chef?  %>
+<% if can? :read, :all %>
 <div id="asd" class="col-md-10">
 	<div class="col-md-10">
 		<% requests.each do |request| %>
